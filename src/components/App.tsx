@@ -1,12 +1,27 @@
-import React from "react";
-import { Component } from "react";
-import { Typography } from "@material-ui/core";
+import React, { Component } from "react";
+
+import About from "./about/About";
+import Blog from "./blog/Blog";
+import Header from "./header/Header";
+import Portfolio from "./portfolio/Portfolio";
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Typography variant="h1">Hello World</Typography>
+        <Header />
+        <main className="relative">
+          <section id="about">
+            <About />
+          </section>
+          <section id="portfolio">
+            <Portfolio />
+          </section>
+          <section id="blog">
+            <Blog />
+          </section>
+
+        </main>
       </div>
     );
   }

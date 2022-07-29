@@ -4,6 +4,7 @@ import About from "./about/About";
 import Blog from "./blog/Blog";
 import Header from "./header/Header";
 import Portfolio from "./portfolio/Portfolio";
+import Welcome from "./welcome/Welcome";
 
 export default class App extends Component {
   render() {
@@ -11,6 +12,9 @@ export default class App extends Component {
       <div className="bg-white">
         <Header />
         <main className="relative ">
+          <section id="welcome">
+            <Welcome />
+          </section>
           <section id="about">
             <About />
           </section>

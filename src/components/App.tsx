@@ -8,9 +8,9 @@ import Portfolio from "./portfolio/Portfolio";
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="bg-white">
         <Header />
-        <main className="relative">
+        <main className="relative ">
           <section id="about">
             <About />
           </section>

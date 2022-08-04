@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Header extends Component {
   render() {
     return (
-      <nav className="fixed w-full z-50 top-0 flex justify-between flex-wrap bg-deep-blue backdrop-filter backdrop-blur-sm bg-opacity-10 p-2 shadow-md shadow-black ">
+      <nav className="fixed w-full z-1 top-0 flex justify-between flex-wrap bg-deep-blue backdrop-filter backdrop-blur-sm bg-opacity-10 p-2 shadow-md shadow-black ">
         <div className="block flex-grow md:flex md:items-center md:w-auto">
           <div className="text-sm md:flex-grow">
             <a

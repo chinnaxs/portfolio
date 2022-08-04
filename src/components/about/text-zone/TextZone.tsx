@@ -3,11 +3,23 @@ import React, { Component } from "react";
 export default class TextZone extends Component {
   render() {
     return (
-      <div>
-        <div className="block">
-          <div className="font-bold text-3xl">About</div>
+      // <div className="flex flex-col font-monospace font-bold text-xl text-white">
+      //  <div className="w-min p-1 border-2 border-green">
+      //     <p className="mt-[-20px] ml-[-20px]">Driven by curiosity</p>
+      //   </div>
+
+      //   <p>Love talking tech</p>
+      // </div>
+
+      <div className="flex flex-col font-monospace text-white">
+        {/* <div className="flex flex-row font-monospace ">
+          <div className="font-bold text-3xl text-white">About</div>
+        </div> */}
+        <div className="font-monospace text-white mt-2">
+          Hi, I am a passionate Full-Stack Developer.
+          <br />
+          I love building things.
         </div>
-        <div className="block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
       </div>
     );
   }

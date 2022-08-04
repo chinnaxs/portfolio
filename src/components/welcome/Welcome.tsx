@@ -8,11 +8,11 @@ export default class Welcome extends Component {
     // TODO: figure out how to insert flag at once
     return (
       <div>
-        <div className="width-full pt-[50px] bg-deep-blue h-screen">
+        <div className="max-w-4xl mx-auto pt-[50px] bg-deep-blue h-screen flex items-center justify-center">
           {/* <div className="mx-auto bg-grayd" */}
-          <div className="block flex flex-nowrap mx-auto bg-white w-2/3 rounded-s">
+          <div className="block flex flex-nowrap my-auto mx-auto bg-white w-2/3 rounded-xl">
             <img
-              className="inline-block rounded-l-s"
+              className="inline-block rounded-l-xl"
               src="/assets/me_square.jpg"
               style={{ width: 250, height: 250 }}
               alt=""
@@ -25,7 +25,7 @@ export default class Welcome extends Component {
                 cursor={true}
                 sequence={["full-stack dev from 🇨🇭"]}
                 wrapper="p"
-                className="font-ubuntu"
+                className="font-monospace"
               />
 
             </div>

@@ -16,21 +16,38 @@ module.exports = {
       green: "#13ce66",
       yellow: "#ffc82c",
       "gray-dark": "#161d26",
-      gray: "#8492a6",
-      "gray-light": "#d3dce6",
+      gray: "#717C9C",
+      "gray-light": "#DBDEE6",
       "deep-blue": "#090c12",
       black: "#000205",
       white: "#e3ddd1",
     },
     borderRadius: {
-      s: "0.75rem",
-      "4xl": "2rem",
+      none: '0px',
+      sm: '0.125rem',
+      DEFAULT: '0.25rem',
+      md: '0.375rem',
+      lg: '0.5rem',
+      xl: '0.75rem',
+      '2xl': '1rem',
+      '3xl': '1.5rem',
+      full: '9999px',
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
-      ubuntu: ['Ubuntu Mono', "monospace"]
+      monospace: ['Ubuntu Mono', "monospace"]
     },
+    fontSize: {
+      sm: ['16px', '24px'],
+      base: ['20px', '28px'],
+      lg: ['24px', '32px'],
+      xl: ['28px', '36px'],
+      "2xl": ['32px', '40px'],
+      "3xl": ['36px', '44px'],
+      "4xl": ['40px', '48px'],
+      "5xl": ['44px', '52px']
+    }
   },
   // theme: {
   //   screens: {

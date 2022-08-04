@@ -9,7 +9,7 @@ import Welcome from "./welcome/Welcome";
 export default class App extends Component {
   render() {
     return (
-      <div className="bg-white">
+      <div className="bg-deep-blue">
         <Header />
         <main className="relative ">
           <section id="welcome">

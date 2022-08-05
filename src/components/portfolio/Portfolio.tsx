@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Fade from "../reveal/Fade";
 import Project, { ProjectProps } from "./Project";
 
 const projectsPropsList: ProjectProps[] = [
@@ -20,7 +21,9 @@ export default class Portfolio extends Component {
       ({ label, link, desc, tags }: ProjectProps) => {
         return (
           <div key={label}>
-            <Project label={label} link={link} desc={desc} tags={tags} />
+            <Fade>
+              <Project label={label} link={link} desc={desc} tags={tags} />
+            </Fade>
           </div>
         );
       }
@@ -29,10 +32,12 @@ export default class Portfolio extends Component {
 
   render() {
     return (
-      <div className="container mx-auto flex flex-col max-w-4xl">
-        <div className="text-5xl font-monospace text-white text-center mt-36">
-          Portfolio
-        </div>
+      <div className="container mx-auto flex flex-col">
+        <Fade>
+          <div className="text-5xl font-monospace text-white text-center mt-36">
+            portfolio
+          </div>
+        </Fade>
         <div className="flex flex-col align-evenly mt-16 space-y-32 w-full mx-auto">
           {this.renderProjectsList()}
         </div>

@@ -10,16 +10,16 @@ export default class Main extends Component {
       <div className="bg-deep-blue">
         <main className="relative">
           <section id="welcome">
-            <Welcome />
+              <Welcome />
           </section>
           <section id="about">
-            <About />
+              <About />
           </section>
           <section id="portfolio">
-            <Portfolio />
+              <Portfolio />
           </section>
           <section id="blog">
-            <Blog />
+              <Blog />
           </section>
         </main>
       </div>

@@ -1,16 +1,18 @@
 import React, {Component} from "react";
 import TypeAnimation from "react-type-animation";
 
+import Fade from "../reveal/Fade";
+
 export default class Welcome extends Component {
 
   render() {
 
     // TODO: figure out how to insert flag at once
     return (
-      <div>
+      <Fade>
         <div className="max-w-4xl mx-auto pt-[50px] bg-deep-blue h-screen flex items-center justify-center">
           {/* <div className="mx-auto bg-grayd" */}
-          <div className="block flex flex-nowrap my-auto mx-auto bg-white w-2/3 rounded-xl">
+          <div className="flex flex-nowrap my-auto mx-auto bg-white w-2/3 rounded-xl">
             <img
               className="inline-block rounded-l-xl"
               src="/assets/me_square.jpg"
@@ -23,7 +25,7 @@ export default class Welcome extends Component {
 
               <TypeAnimation
                 cursor={true}
-                sequence={["full-stack dev from 🇨🇭"]}
+                sequence={[500, "full-stack dev from 🇨🇭"]}
                 wrapper="p"
                 className="font-monospace"
               />
@@ -31,7 +33,7 @@ export default class Welcome extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Fade>
     );
   }
 }

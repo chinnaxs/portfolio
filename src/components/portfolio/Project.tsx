@@ -1,55 +1,59 @@
 import React, { Component } from "react";
-import Modal from 'react-modal';
-import ProjectModal from "./ProjectModal";
+import { Link } from "react-router-dom";
 
 export type ProjectProps = {
-  label?: string;
+  label: string;
   imgSrc?: string;
-  imgDesc?: string;
-  
-}
+  desc?: string;
+  tags?: string[];
+  link: string;
+};
 
 export default class Project extends Component<ProjectProps> {
   static defaultProps = {
     label: "test label",
     imgSrc: "assets/me_square.jpg",
-  }
+    link: "/personal-page",
+    tags: []
+  };
 
-  state = {
-    showModal: false
-  }
-
-  showModal = () => {
-    this.setState({
-      showModal: true
+  renderTags(projectProps: ProjectProps) {
+    return projectProps.tags?.map((tag) => {
+        return (
+          <div key={tag} className=" text-gray text-sm rounded-full px-1 m-2 w-min">
+            {tag}
+          </div>
+        )
     });
-  }
-
-  closeModal = () => {
-    this.setState({
-      showModal: false
-    })
   }
 
   render() {
     return (
-      <div className="group relative max-w-[200px] hover:scale-125 ease-in duration-300">
-        <img className="w-full rounded" src={this.props.imgSrc} alt="me" />
-        <button
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 ease-in duration-100 bg-green text-deep-blue p-2 rounded font-monospace"
-          onClick={this.showModal}
-        >
-          Learn more
-        </button>
-        <p className="text-white font-monospace font-bold text-center mt-2">{this.props.label}</p>
-        <Modal
-      isOpen={this.state.showModal}
-      onRequestClose={this.closeModal}
-      contentLabel="Example Modal"
-    >
-    <ProjectModal/>
-    <button onClick={this.closeModal}>close</button>
-    </Modal>
+      <div className="group relative max-w-4xl">
+        <div className="flex flex-row gap-12 items-center">
+          <img
+            className="max-w-[300px] object-contain rounded"
+            src={this.props.imgSrc}
+            alt="me"
+          />
+          <div className="flex flex-col place-content-between">
+            <h2 className="text-white text-xl font-monospace font-bold mt-2">
+              {this.props.label}
+            </h2>
+            <p className="text-white font-monospace m-4">
+              {this.props.desc}
+            </p>
+            <div className="flex flex-row">
+              {this.renderTags(this.props)}
+            </div>
+            <Link
+              className="hover:scale-110 ease-in w-[6em] duration-300 flex-nowrap text-center bg-green text-deep-blue p-2 rounded font-monospace m-4"
+              to={this.props.link}
+            >
+              Learn more
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

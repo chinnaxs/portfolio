@@ -47,7 +47,7 @@ export default class Project extends Component<ProjectProps> {
               {this.renderTags(this.props)}
             </div>
             <Link
-              className="hover:scale-110 ease-in w-[6em] duration-300 flex-nowrap text-center bg-green text-deep-blue p-2 rounded font-monospace m-4"
+              className="hover:scale-110 ease-in w-[6em] duration-300 flex-nowrap text-center bg-green text-deep-blue p-2 rounded font-monospace m-3"
               to={this.props.link}
             >
               Learn more

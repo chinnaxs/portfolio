@@ -29,11 +29,11 @@ export default class Portfolio extends Component {
 
   render() {
     return (
-      <div className="container mx-auto flex flex-col">
+      <div className="container mx-auto flex flex-col max-w-4xl">
         <div className="text-5xl font-monospace text-white text-center mt-36">
           Portfolio
         </div>
-        <div className="flex flex-col align-evenly mt-16 space-y-32">
+        <div className="flex flex-col align-evenly mt-16 space-y-32 w-full mx-auto">
           {this.renderProjectsList()}
         </div>
       </div>

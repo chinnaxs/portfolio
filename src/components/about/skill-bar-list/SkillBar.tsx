@@ -7,9 +7,6 @@ export type SkillBarProps = {
 };
 
 export default class SkillBar extends Component<SkillBarProps> {
-  constructor(props: SkillBarProps) {
-    super(props);
-  }
 
   render() {
     return (

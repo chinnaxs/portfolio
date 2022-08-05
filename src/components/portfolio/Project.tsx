@@ -29,7 +29,7 @@ export default class Project extends Component<ProjectProps> {
 
   render() {
     return (
-      <div className="group relative max-w-4xl">
+      <div className="group relative">
         <div className="flex flex-row gap-12 items-center">
           <img
             className="max-w-[300px] object-contain rounded"

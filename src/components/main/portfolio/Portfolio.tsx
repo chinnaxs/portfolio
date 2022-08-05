@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fade from "../reveal/Fade";
+import Fade from "../../reveal/Fade";
 import Project, { ProjectProps } from "./Project";
 
 const projectsPropsList: ProjectProps[] = [

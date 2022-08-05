@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import About from "../about/About";
-import Blog from "../blog/Blog";
-import Portfolio from "../portfolio/Portfolio";
-import Welcome from "../welcome/Welcome";
+import About from "../main/about/About";
+import Blog from "../main/blog/Blog";
+import Portfolio from "../main/portfolio/Portfolio";
+import Welcome from "../main/welcome/Welcome";
 
 export default class Main extends Component {
   render() {

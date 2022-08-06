@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+
+import postMail from "../../../apis/herotofu";
 import Fade from "../../reveal/Fade";
 import FormError from "./FormError";
 
-export type ContactProps = {};
+type ContactProps = {};
 
-export type ContactState = {
+type ContactState = {
   firstName: string;
   lastName: string;
   email: string;
@@ -15,6 +17,13 @@ export type ContactState = {
   emailInvalid: boolean;
   messageMissing: boolean;
 };
+
+type ContactFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
 
 export default class Contact extends Component<ContactProps, ContactState> {
   state: ContactState = {
@@ -32,34 +41,37 @@ export default class Contact extends Component<ContactProps, ContactState> {
   onSendButtonClicked = () => {
     console.log(this.state);
 
-    let firstNameMissing: boolean = !this.state.firstName;
-    let lastNameMissing: boolean = !this.state.lastName;
-    let emailMissing: boolean = !this.state.email;
-    let messageMissing: boolean = !this.state.message;
-
-    let emailInvalid: boolean = !emailMissing && !this.isValidEmail(this.state.email);
+    this.setState({
+      firstNameMissing: !this.state.firstName,
+      lastNameMissing: !this.state.lastName,
+      emailMissing: !this.state.email,
+      emailInvalid: !!this.state.email && !this.isValidEmail(this.state.email),
+      messageMissing: !this.state.message
+    });
 
     if (
-      firstNameMissing ||
-      lastNameMissing ||
-      emailMissing ||
-      messageMissing ||
-      emailInvalid
+      this.state.firstNameMissing ||
+      this.state.lastNameMissing ||
+      this.state.emailMissing ||
+      this.state.messageMissing ||
+      this.state.emailInvalid
     ) {
-      this.setState({
-        firstNameMissing,
-        lastNameMissing,
-        emailMissing,
-        emailInvalid,
-        messageMissing,
-      });
-
+      return;
     }
+
+    let data: ContactFormData = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      message: this.state.email
+    }
+
+    postMail(data);
   };
 
   isValidEmail(input: string): boolean {
     let regexp = new RegExp(
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
     return regexp.test(input);
   }

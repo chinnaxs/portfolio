@@ -1,7 +1,28 @@
 import React, { Component } from "react";
 import Fade from "../../reveal/Fade";
 
-export default class Contact extends Component {
+export type ContactProps = {
+}
+
+export type ContactState =  {
+  firstName: string,
+  lastName: string,
+  email: string,
+  message: string
+}
+
+export default class Contact extends Component<ContactProps, ContactState> {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  }
+
+  onSendButtonClicked = () => {
+    console.log(this.state);
+  }
+
   render() {
     return (
       <Fade>
@@ -26,6 +47,8 @@ export default class Contact extends Component {
                     className="appearance-none block w-full bg-white border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
+                    value={this.state.firstName}
+                    onChange={(e) => this.setState({firstName: e.target.value})}
                   />
                   <p className="text-white text-xs italic">
                     Please fill out this field.
@@ -42,6 +65,8 @@ export default class Contact extends Component {
                     className="appearance-none block w-full bg-white border border-white rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     type="text"
+                    value={this.state.lastName}
+                    onChange={(e) => this.setState({lastName: e.target.value})}
                   />
                 </div>
               </div>
@@ -54,9 +79,11 @@ export default class Contact extends Component {
                     e-mail
                   </label>
                   <input
-                    className="appearance-none block w-full bg-white text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="appearance-none block w-full bg-white text-deep-blue border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="email"
                     type="email"
+                    value={this.state.email}
+                    onChange={(e) => this.setState({email: e.target.value})}
                   />
                 </div>
               </div>
@@ -69,14 +96,18 @@ export default class Contact extends Component {
                     message
                   </label>
                   <textarea
-                    className=" no-resize appearance-none block w-full bg-white text-gray border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+                    className=" no-resize appearance-none block w-full bg-white text-deep-blue border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                     id="message"
+                    
+                    value={this.state.message}
+                    onChange={(e) => this.setState({message: e.target.value})}
                   ></textarea>
                 </div>
               </div>
               <button
                 className="block mx-auto bg-green hover:scale-110 ease-in duration-200 font-monospace text-deep-blue font-bold py-1 px-4 rounded"
                 type="button"
+                onClick={this.onSendButtonClicked}
               >
                 Send
               </button>

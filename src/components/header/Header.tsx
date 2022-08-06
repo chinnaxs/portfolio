@@ -41,7 +41,7 @@ export default class Header extends Component {
               <img
                 src="https://cdn.cdnlogo.com/logos/l/66/linkedin-icon.svg"
                 alt="LinkedIn"
-                style={{ width: 2, height: 24 }}
+                style={{ width: 24, height: 24 }}
               />
             </a>
           </div>

@@ -37,7 +37,7 @@ export default class Project extends Component<ProjectProps> {
             alt="me"
           />
           <div className="flex flex-col place-content-between">
-            <h2 className="text-white text-xl font-monospace font-bold mt-2">
+            <h2 className="text-white text-xl font-monospace mt-2">
               {this.props.label}
             </h2>
             <p className="text-white font-monospace m-4">

@@ -1,26 +1,67 @@
 import React, { Component } from "react";
 import Fade from "../../reveal/Fade";
+import FormError from "./FormError";
 
-export type ContactProps = {
-}
+export type ContactProps = {};
 
-export type ContactState =  {
-  firstName: string,
-  lastName: string,
-  email: string,
-  message: string
-}
+export type ContactState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  firstNameMissing: boolean;
+  lastNameMissing: boolean;
+  emailMissing: boolean;
+  emailInvalid: boolean;
+  messageMissing: boolean;
+};
 
 export default class Contact extends Component<ContactProps, ContactState> {
-  state = {
+  state: ContactState = {
     firstName: "",
     lastName: "",
     email: "",
     message: "",
-  }
+    firstNameMissing: false,
+    lastNameMissing: false,
+    emailMissing: false,
+    emailInvalid: false,
+    messageMissing: false,
+  };
 
   onSendButtonClicked = () => {
     console.log(this.state);
+
+    let firstNameMissing: boolean = !this.state.firstName;
+    let lastNameMissing: boolean = !this.state.lastName;
+    let emailMissing: boolean = !this.state.email;
+    let messageMissing: boolean = !this.state.message;
+
+    let emailInvalid: boolean = !emailMissing && !this.isValidEmail(this.state.email);
+
+    if (
+      firstNameMissing ||
+      lastNameMissing ||
+      emailMissing ||
+      messageMissing ||
+      emailInvalid
+    ) {
+      this.setState({
+        firstNameMissing,
+        lastNameMissing,
+        emailMissing,
+        emailInvalid,
+        messageMissing,
+      });
+
+    }
+  };
+
+  isValidEmail(input: string): boolean {
+    let regexp = new RegExp(
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    return regexp.test(input);
   }
 
   render() {
@@ -48,11 +89,11 @@ export default class Contact extends Component<ContactProps, ContactState> {
                     id="grid-first-name"
                     type="text"
                     value={this.state.firstName}
-                    onChange={(e) => this.setState({firstName: e.target.value})}
+                    onChange={(e) =>
+                      this.setState({ firstName: e.target.value })
+                    }
                   />
-                  <p className="text-white text-xs italic">
-                    Please fill out this field.
-                  </p>
+                  <FormError show={this.state.firstNameMissing} msg="Please fill out this field" />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <label
@@ -62,12 +103,15 @@ export default class Contact extends Component<ContactProps, ContactState> {
                     last Name
                   </label>
                   <input
-                    className="appearance-none block w-full bg-white border border-white rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="appearance-none block w-full bg-white border border-white rounded py-3 px-4 mb-3  leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     type="text"
                     value={this.state.lastName}
-                    onChange={(e) => this.setState({lastName: e.target.value})}
+                    onChange={(e) =>
+                      this.setState({ lastName: e.target.value })
+                    }
                   />
+                  <FormError show={this.state.lastNameMissing} msg="Please fill out this field" />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -83,8 +127,10 @@ export default class Contact extends Component<ContactProps, ContactState> {
                     id="email"
                     type="email"
                     value={this.state.email}
-                    onChange={(e) => this.setState({email: e.target.value})}
+                    onChange={(e) => this.setState({ email: e.target.value })}
                   />
+                <FormError show={this.state.emailMissing} msg="Please fill out this field" />
+                <FormError show={this.state.emailInvalid} msg="Please enter valid e-mail" />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -98,10 +144,10 @@ export default class Contact extends Component<ContactProps, ContactState> {
                   <textarea
                     className=" no-resize appearance-none block w-full bg-white text-deep-blue border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                     id="message"
-                    
                     value={this.state.message}
-                    onChange={(e) => this.setState({message: e.target.value})}
+                    onChange={(e) => this.setState({ message: e.target.value })}
                   ></textarea>
+                  <FormError show={this.state.messageMissing} msg="Please fill out this field" />
                 </div>
               </div>
               <button

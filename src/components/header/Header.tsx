@@ -41,7 +41,7 @@ export default class Header extends Component {
               <img
                 src="https://cdn.cdnlogo.com/logos/l/66/linkedin-icon.svg"
                 alt="LinkedIn"
-                style={{ width: 24, height: 24 }}
+                style={{ width: 2, height: 24 }}
               />
             </a>
           </div>
@@ -51,17 +51,6 @@ export default class Header extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                alt="Github"
-                style={{ width: 20, height: 20 }}
-              /> */}
-              {/* <img
-                className="invert"
-                src="https://cdn.cdnlogo.com/logos/g/55/github.svg"
-                alt="Github"
-                style={{ width: 20, height: 20 }}
-              /> */}
               <svg
                 className="fill-white rounded-sm"
                 xmlns="http://www.w3.org/2000/svg"

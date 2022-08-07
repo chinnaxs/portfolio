@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import postMail from "../../../apis/herotofu";
 import Fade from "../../reveal/Fade";
 import FormError from "./FormError";
+import Toast from "./toasts/Toast";
+import { toast } from "react-toastify";
 
 type ContactProps = {};
 
@@ -66,8 +68,47 @@ export default class Contact extends Component<ContactProps, ContactState> {
       message: this.state.email
     }
 
-    postMail(data);
+    postMail(data).then((response) => {
+      if (response.status == 200) {
+        this.emitToastSuccess();
+        return;
+      }
+      this.emitToastError();
+    })
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    });
   };
+
+  emitToastSuccess() {
+    toast.success('Thank you for reaching out! I will get back to you as soon as possible!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
+  emitToastError() {
+    toast.error('Message could not be delivered. Please try again later', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  
+  }
 
   isValidEmail(input: string): boolean {
     let regexp = new RegExp(
@@ -169,6 +210,7 @@ export default class Contact extends Component<ContactProps, ContactState> {
               >
                 Send
               </button>
+              <Toast />
             </form>
           </div>
         </div>

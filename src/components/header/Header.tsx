@@ -9,7 +9,7 @@ export default class Header extends Component {
       <nav className="fixed w-full z-50 top-0 flex justify-between flex-wrap bg-blue backdrop-filter backdrop-blur-sm bg-opacity-10 p-1 shadow-md shadow-black ">
         <div className="px-4">
           <div>
-            <div className="justify-between py-2 md:py-2">
+            <div className="py-2">
               <div className="md:hidden">
                 <button
                   className="p-2 rounded-md outline-none focus:border-white focus:border"

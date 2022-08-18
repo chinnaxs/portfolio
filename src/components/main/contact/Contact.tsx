@@ -69,7 +69,7 @@ export default class Contact extends Component<ContactProps, ContactState> {
     }
 
     postMail(data).then((response) => {
-      if (response.status == 200) {
+      if (response.status === 200) {
         this.emitToastSuccess();
         return;
       }

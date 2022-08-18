@@ -7,12 +7,12 @@ export default class Header extends Component {
   render() {
     return (
       <nav className="fixed w-full z-50 top-0 flex justify-between flex-wrap bg-blue backdrop-filter backdrop-blur-sm bg-opacity-10 p-1 shadow-md shadow-black ">
-        <div className="px-4 md:items-center md:flex md:px-8">
+        <div className="px-4">
           <div>
-            <div className="flex items-center justify-between py-2 md:py-2">
+            <div className="items-center justify-between py-2 md:py-2">
               <div className="md:hidden">
                 <button
-                  className="p-2 text-white rounded-md outline-none focus:border-white focus:border"
+                  className="p-2 rounded-md outline-none focus:border-white focus:border"
                   onClick={() => this.setState({ navBar: !this.state.navBar })}
                 >
                   {this.state.navBar ? (
@@ -50,7 +50,7 @@ export default class Header extends Component {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
+              className={`1 justify-self-center pb-3 mt-4 md:block md:pb-0 md:mt-0 ${
                 this.state.navBar ? "block" : "hidden"
               }`} 
               onClick={() => this.setState({ navBar: !this.state.navBar })}
@@ -59,7 +59,7 @@ export default class Header extends Component {
                 <li>
                   <HashLink
                     to="/#about"
-                    className="block md:inline-block md:mt-0 text-white hover:text-white mr-4 px-2 font-monospace"
+                    className="block md:inline-block md:mt-0 text-white mr-4 px-2 font-monospace"
                   >
                     About
                   </HashLink>
@@ -67,7 +67,7 @@ export default class Header extends Component {
                 <li>
                   <HashLink
                     to="/#portfolio"
-                    className="block md:inline-block md:mt-0  text-white hover:text-white mr-4 px-2 font-monospace"
+                    className="block md:inline-block md:mt-0 text-white mr-4 px-2 font-monospace"
                   >
                     Portfolio
                   </HashLink>
@@ -75,7 +75,7 @@ export default class Header extends Component {
                 <li>
                   <HashLink
                     to="/#blog"
-                    className="block md:inline-block md:mt-0  text-white hover:text-white mr-4 px-2 font-monospace"
+                    className="block md:inline-block md:mt-0 text-white mr-4 px-2 font-monospace"
                   >
                     Blog
                   </HashLink>
@@ -83,7 +83,7 @@ export default class Header extends Component {
                 <li>
                   <HashLink
                     to="/#contact"
-                    className="block md:inline-block md:mt-0  text-white hover:text-white px-2 font-monospace"
+                    className="block md:inline-block md:mt-0 text-white mr-4 px-2 font-monospace"
                   >
                     Contact
                   </HashLink>
@@ -92,7 +92,7 @@ export default class Header extends Component {
             </div>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-2">
           <div className="inline-block m-2">
             <a
               href="https://www.linkedin.com/in/matthias-lei/"

@@ -29,15 +29,15 @@ export default class Project extends Component<ProjectProps> {
 
   render() {
     return (
-      <div className="group relative">
-        <div className="flex flex-row gap-12 items-center">
+      <div className="container">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center mx-16">
           <img
             className="max-w-[300px] object-contain rounded"
             src={this.props.imgSrc}
             alt="me"
           />
           <div className="flex flex-col place-content-between">
-            <h2 className="text-white text-xl font-monospace mt-2">
+            <h2 className="text-white text-xl font-monospace ">
               {this.props.label}
             </h2>
             <p className="text-white font-monospace m-4">

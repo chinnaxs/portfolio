@@ -5,6 +5,8 @@ import SkillBar, { SkillBarProps } from "./SkillBar";
 const Skills: SkillBarProps[] = [
   { label: "Java", percentage: 90 },
   { label: "Quarkus", percentage: 90 },
+  // TODO
+  // typescript label causes unaligned skillbar
   { label: "Typescript", percentage: 70 },
   { label: "React", percentage: 50 },
   { label: "Spring Boot", percentage: 50},

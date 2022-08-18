@@ -8,18 +8,20 @@ export default class About extends Component {
   render() {
     return (
       <Fade>
-        <div className="container mx-auto max-w-6xl flex flex-col">
+        <div className="container mx-auto ">
+          <div className="max-w-6xl mx-16 flex flex-col">
           <div className="text-5xl font-monospace text-white text-center mt-36">
             about
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mx-36 mt-16 ">
-            <div className="col-span-1 p-4">
+          <div className="flex md:flex-row flex-col ">
+            <div className="basis-1/2 my-16">
               <TextZone />
             </div>
-            <div className="col-span-2 ">
+            <div className="basis-1/2">
               <SkillBarList />
             </div>
+          </div>
           </div>
         </div>
       </Fade>

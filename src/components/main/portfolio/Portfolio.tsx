@@ -6,12 +6,12 @@ const projectsPropsList: ProjectProps[] = [
   {
     label: "Personal page",
     link: "personal-page",
-    desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    desc: "My first iteration of my personal web page, probably also not the last. Additionally, this was my first time coming up with a design from scratch and implementing it with TailwindCSS.",
     tags: ["React", "TailwindCSS", "Typescript"],
   },
   {
-    label: "Test",
-    link: "personal-page",
+    label: "Tickmark",
+    desc: "Coming soon"
   },
 ];
 

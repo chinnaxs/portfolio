@@ -6,14 +6,13 @@ export type ProjectProps = {
   imgSrc?: string;
   desc?: string;
   tags?: string[];
-  link: string;
+  link?: string;
 };
 
 export default class Project extends Component<ProjectProps> {
   static defaultProps = {
     label: "test label",
     imgSrc: "assets/me_square.jpg",
-    link: "/personal-page",
     tags: []
   };
 
@@ -46,12 +45,12 @@ export default class Project extends Component<ProjectProps> {
             <div className="flex flex-row">
               {this.renderTags(this.props)}
             </div>
-            <Link
+            {this.props.link ? <Link
               className="hover:scale-110 ease-in w-[6em] duration-300 flex-nowrap text-center bg-green text-deep-blue p-2 rounded font-monospace m-3"
               to={this.props.link}
             >
               Learn more
-            </Link>
+            </Link> : null}
           </div>
         </div>
       </div>

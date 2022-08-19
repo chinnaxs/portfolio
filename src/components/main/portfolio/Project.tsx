@@ -30,9 +30,9 @@ export default class Project extends Component<ProjectProps> {
   render() {
     return (
       <div className="container">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center mx-16">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12  md:items-start mx-16">
           <img
-            className="max-w-[300px] object-contain rounded"
+            className="max-w-xs object-contain rounded w-full"
             src={this.props.imgSrc}
             alt="me"
           />

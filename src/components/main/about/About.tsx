@@ -14,7 +14,7 @@ export default class About extends Component {
             about
           </div>
 
-          <div className="flex md:flex-row flex-col ">
+          <div className="flex md:flex-row flex-col mt-16">
             <div className="basis-1/2 my-16">
               <TextZone />
             </div>

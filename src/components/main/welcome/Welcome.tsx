@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import TypeAnimation from "react-type-animation";
 
-import Fade from "../../reveal/Fade";
+import Fade from "../../animation/Fade";
 
 export default class Welcome extends Component {
 

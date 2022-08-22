@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import postMail from "../../../apis/herotofu";
-import Fade from "../../reveal/Fade";
+import Fade from "../../animation/Fade";
 import FormError from "./FormError";
 import Toast from "./toasts/Toast";
 import { toast } from "react-toastify";

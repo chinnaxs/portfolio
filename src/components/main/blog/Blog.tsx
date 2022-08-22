@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fade from "../../reveal/Fade";
+import Fade from "../../animation/Fade";
 export default class Blog extends Component {
   render() {
     return (

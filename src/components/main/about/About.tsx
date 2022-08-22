@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Fade from "../../reveal/Fade";
+import Fade from "../../animation/Fade";
 import SkillBarList from "./skill-bar-list/SkillBarList";
 import TextZone from "./text-zone/TextZone";
 

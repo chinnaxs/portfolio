@@ -16,8 +16,8 @@ export default class Project extends Component<ProjectProps> {
     tags: []
   };
 
-  renderTags(projectProps: ProjectProps) {
-    return projectProps.tags?.map((tag) => {
+  renderTags() {
+    return this.props.tags?.map((tag) => {
         return (
           <div key={tag} className=" text-gray text-sm rounded-full px-1 m-2 w-min">
             {tag}
@@ -43,7 +43,7 @@ export default class Project extends Component<ProjectProps> {
               {this.props.desc}
             </p>
             <div className="flex flex-row">
-              {this.renderTags(this.props)}
+              {this.renderTags()}
             </div>
             {this.props.link ? <Link
               className="hover:scale-110 ease-in w-[6em] duration-300 flex-nowrap text-center bg-green text-deep-blue p-2 rounded font-monospace m-3"

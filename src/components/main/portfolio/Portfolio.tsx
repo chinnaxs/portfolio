@@ -8,6 +8,7 @@ const projectsPropsList: ProjectProps[] = [
     imgSrc: "assets/portfolio_preview.png",
     desc: "My first iteration of my personal web page. Additionally, this was my first time coming up with a design from scratch and implementing it with TailwindCSS.",
     tags: ["React", "TailwindCSS", "Typescript"],
+    githubLink: "https://github.com/chinnaxs/portfolio"
   },
   {
     label: "Tickmark",
@@ -18,11 +19,11 @@ const projectsPropsList: ProjectProps[] = [
 export default class Portfolio extends Component {
   renderProjectsList() {
     return projectsPropsList.map(
-      ({ label, imgSrc, link, desc, tags }: ProjectProps) => {
+      ({ label, imgSrc, link, desc, tags, githubLink }: ProjectProps) => {
         return (
           <div key={label}>
             <Fade>
-              <Project label={label} link={link} desc={desc} tags={tags} imgSrc={imgSrc}/>
+              <Project label={label} link={link} desc={desc} tags={tags} imgSrc={imgSrc} githubLink={githubLink}/>
             </Fade>
           </div>
         );

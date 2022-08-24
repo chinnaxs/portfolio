@@ -39,7 +39,7 @@ export default class Portfolio extends Component {
             portfolio
           </div>
         </Fade>
-        <div className="flex flex-col align-evenly mt-16 space-y-32 w-full mx-auto">
+        <div className="flex flex-col align-evenly mt-16 space-y-16 md:space-y-32 w-full mx-auto">
           {this.renderProjectsList()}
         </div>
       </div>

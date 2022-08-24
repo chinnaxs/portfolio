@@ -3,12 +3,11 @@ import React, { Component } from "react";
 export default class TextZone extends Component {
   render() {
     return (
-      <div className="flex flex-col font-monospace text-white">
+      <div className="flex flex-col">
 
-        <div className="font-monospace text-white mt-2">
-          Hi, I am a passionate Full-Stack Developer.
-          <br />
-          I love building things.
+        <div className="font-monospace text-white text-xl text-center mt-2">
+
+          I ❤️ coding stuff.
         </div>
       </div>
     );

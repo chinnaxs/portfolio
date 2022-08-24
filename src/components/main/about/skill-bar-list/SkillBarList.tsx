@@ -11,7 +11,7 @@ const Skills: SkillBarProps[] = [
   { label: "React", percentage: 50 },
   { label: "Spring Boot", percentage: 50},
   { label: "Angular", percentage: 30 },
-  { label: "🧗", percentage: 100}
+  // { label: "🧗", percentage: 100}
 ];
 
 export default class SkillBarList extends Component {

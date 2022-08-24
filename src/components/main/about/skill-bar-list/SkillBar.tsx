@@ -10,9 +10,9 @@ export default class SkillBar extends Component<SkillBarProps> {
 
   render() {
     return (
-      <div className="flex w-full my-3">
-        <p className="text-right mr-4 w-1/5 font-monospace text-white">{this.props.label}</p>
-        <div className="w-4/5 self-center bg-gray h-1">
+      <div className="flex flex-col md:flex-row w-full my-3">
+        <p className="text-left md:text-right mr-4 md:w-1/5 font-monospace text-white">{this.props.label}</p>
+        <div className="w-full md:w-4/5 self-center bg-gray h-1">
           <motion.div
             className=" bg-green h-1"
             viewport={{ once: true }}
